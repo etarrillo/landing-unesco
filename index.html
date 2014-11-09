@@ -3,14 +3,27 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
+	<script src="js/html5shiv.js"></script>
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	 <script>
+    $(function(){
+      $("#myModal").hide();
+    });
+        
+        $('#myModal').on('show.bs.modal', function (e) {
+            if (!data) return e.preventDefault() // stops modal from being shown
+        });
+    </script>
 </head>
 <body>
 	<header>
 		<div class="contenedor">
-			<img src="img/logo_facultad_educacion.png" >
-			<img src="img/logo_pucp_virtual.png" >
-			<img src="img/logo_pucp.png" >
+			<img class="lado-izquierdo" src="img/logo_facultad_educacion.png" >
+			<img class="lado-izquierdo" src="img/logo_pucp_virtual.png" >
+			<img class="lado-derecho" src="img/logo_pucp.png" >
 		</div>
 	</header>
 
@@ -24,20 +37,54 @@
 	<div id="sombra"></div>
 
 	<section>
-		<article class="region-main-side-left">
-			<h2>Bienvenidos</h2>
-			<h3>Proyecto de Capacitación Docente</h3>
-			<p><strong>Inicio de Actividades de Inducción:</strong> Lunes 20 de octubre</p>
-			<p><strong>Inicio del Módulo 1:</strong> Lunes 03 de noviembre</p>
-		</article>
-		<article class="region-main-side-right">
-			<h2>Redes</h2>
-			<a class="boton-padd" href="#">Inicial</a>
-			<a class="boton-padd" href="#">Primaria</a>
-			<a class="boton-padd" href="#">Secundaria</a>
-		</article>
+		<div class="contenedor">
+			<article class="regiones region-main-side-left">
+				<h2>Bienvenidos</h2>
+				<h3>Proyecto de Capacitación Docente</h3>
+				<p><strong>Inicio de Actividades de Inducción:</strong> Lunes 20 de octubre</p>
+				<p><strong>Inicio del Módulo 1:</strong> Lunes 03 de noviembre</p>
+				<a class="boton-amarillo" href="#" data-toggle="modal" data-target="#myModal">Requisitos</a>
+			</article>
+			<article class="regiones region-main-side-right">
+				<h2>Redes</h2>
+				<div class="botones-padd">
+					<a class="boton-padd" href="http://inicial.pvirtual.net">Inicial</a>
+					<a class="boton-padd" href="#">Primaria</a>
+					<a class="boton-padd" href="#">Secundaria</a>
+				</div>
+			</article>
+		</div>
 	</section>
 		
+	 <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel">Requisitos</h4>
+          </div>
+          <div class="modal-body">
+            <h4>Verifique los requisitos para participar</h4>
+            <ul>
+                <li>Título profesional en Educación.</li>
+                <li>Ser docente con aula a cargo (u horas a cargo en el caso de secundaria) en el nivel educativo que atiende el programa, en una institución educativa pública urbana donde el 50% o más de estudiantes de 2do grado de primaria obtuvieron un desempeño mayor o igual al nivel 1 en la Evaluación Censal de Estudiantes (ECE 2013), ya sea en comunicación y/o matemática. </li>
+                <li>No estar siendo beneficiado con algún programa de Especialización o Actualización regular ejecutado por el MINEDU en el periodo 2014-2015.</li>
+                <li>No estar cursando algún otro programa de post grado. </li>
+                <li>Pertenecer a un ámbito urbano con conectividad a Internet.</li>
+                <li>Habilidades básicas de uso de herramientas de ofimática y de navegadores de internet.</li>
+            </ul>
+            <div style="font-size: 17px;color: #0070a8;">
+                <strong>Para Lima Metropolitana, solo UGEL 1, 3, 5, 6 y 7.</strong>
+            </div>
+            <!-- <a style="margin-top:20px;" href="/local/registration/index.php" class="boton-amarillo">Matricúlate</a> -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
 </body>
 </html>
 
